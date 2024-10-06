@@ -1,0 +1,61 @@
+// Set background image to the sprite "bg_jungle"
+<<Scene @ bg_jungle>>
+
+// Play audio clip Jungle at full volume, looping indefinitely
+<<PlayAudio @ music_funny, 1.0, loop>>
+
+THE JUNGLE
+
+// Add the character "Lion" with the sprite "lion", positioned on the left and center of the screen, with a yellow text label
+<<Act @ Lion, lion, left, center, yellow>>
+
+Lion: Finally, a quiet day in the jungle. Maybe I'll have some time to relax.
+
+// Add the character "Panda" with the sprite "panda", off-screen to the right, with a blue text label
+<<Act @ Panda, panda, 1.25, center, #226677>>
+
+// Animate Panda moving to the right-half and center of the screen, taking 0.5 seconds
+<<Move @ Panda, right, center, 0.5>>
+
+
+Panda: Hey Lion! I have a question!
+Lion: Oh no...
+
+// Flip the character "Lion" to face Panda
+<<Flip @ Lion>>
+
+// Yarn shortcut choices for branching dialogue options:
+-> Lion gets hungry and looks at Panda
+	<<Shake @ Lion, 1.0>>
+	Lion: Hmm, Panda... you look like a good snack.
+	Panda: Wait, what?! I just wanted to talk!
+	Lion: I'm listening... while I decide how best to eat you.
+	Panda: Oh no, you don't! I'm fast when I need to be!
+
+// Animate Panda moving quickly off-screen
+<<Move @ Panda, 1.25, center, 1.0>>
+
+Lion: Too slow. Guess I'll have to hunt something else.
+
+
+Lion: Now, where was I? Oh right, my nap.
+
+// Flip the character "Lion" back to his original position
+<<Flip @ Lion>>
+
+Lion: Wait... Where's my hammock? It's gone.
+<<Shake @ Lion>>
+Lion: PANDA! Have you seen my hammock???
+
+<<Move @ Lion, 1.25, center, 1.0>>
+Lion: Stoppp!!!
+
+// Fade the screen to black over 2 seconds
+<<Fade @ black, 0.0, 1.0, 2.0>>
+
+Credited : Images from Vector free images, sound track from pixabay free sound
+
+// Stop all currently playing sounds
+<<StopAudioAll @>>
+
+THE END.
